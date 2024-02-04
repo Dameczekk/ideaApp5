@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test 0</title>
+</head>
+<body>
+  <main>
+    <button id="btn">Toggle div</button>
+    <div>To</div>
+  </main>
+  <style>
+    * {
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-family: var(--defaultFont);
+      color: var(--defaultFontColor);
+    }
+
+    :root {
+      --leadingColor: #38b6ff;
+      --leadingColor2: #65c7ff;
+      --leadingColorHover: #83d1ff;
+      --shadow: 0 2px 8px #00000045;
+      --defaultFont: Roboto;
+      --defaultFontColor: #000;
+      --theme: #ffffffc6;
+
+      --openModal: openModal 0.5s forwards;
+      --closeModal: closeModal 0.5s forwards;
+      --zoom: zoom 0.5s forwards;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      background-color: #8a2be2;
+    }
+
+    .blue {
+      background-color: #0000ff;
+    }
+  </style>
+  <script>
+    const $btn = document.querySelector('#btn');
+    const div = document.querySelector('div');
+
+    $btn.addEventListener('click', () => {
+      div.classList.toggle('blue');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/img/pics/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="src/css/loaders.css">
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/animations.css">
+  <link rel="stylesheet" href="src/css/responsive.css">
+  <title>app</title>
+</head>
+<body>
+  <div class="startScreen">
+    <div class="container">
+      <img src="assets/img/pics/ideaApp5PanelLogo.png" alt="IDEA app 5 Full logo">
+      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <div class="modals">
+    <div class="modal_0 hidden">
+      <h1>Settings</h1>
+      <div class="dialog">
+        <button class="cancel">cancel</button>
+        <button id="confirm_0" class="confirm">confirm</button>
+      </div>
+    </div>
+    <div class="modal_1 hidden">
+      <div class="container">
+        <h1>Log in</h1>
+        <img src="assets/img/pics/ideaApp5PanelWhiteLogo.png" alt="White logo" class="logo">
+        <img src="assets/img/pics/brain.png" alt="Brain" class="brain">
+        <input id="username_Input_0" placeholder="Login" type="text">
+        <input id="password_Input_0" placeholder="Password" type="password">
+        <button id="login_Button">Log in</button>
+        <span class="alert" id="alert_0"></span>
+        <span>Don't have account?</span>
+        <button id="signup_Button">Sign up</button>
+      </div>
+    </div>
+    <div class="modal_2 hidden">
+      <div class="container">
+        <h1>Sign up</h1>
+        <div class="elements">
+          <button id="arrowBack" class="arrow">
+            <img src="assets/img/icons/arrow_back.png" alt="Arrow img">
+          </button>
+          <div id="sliderContainer">
+            <div id="profilePics">
+              <div class="sliderItem"><img src="assets/img/pics/person0.png" alt="Profile 1"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person1.png" alt="Profile 2"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person2.png" alt="Profile 3"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person3.png" alt="Profile 4"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person4.png" alt="Profile 5"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person5.png" alt="Profile 6"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person6.png" alt="Profile 7"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person7.png" alt="Profile 8"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person8.png" alt="Profile 9"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person9.png" alt="Profile 10"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person10.png" alt="Profile 11"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person11.png" alt="Profile 12"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person12.png" alt="Profile 13"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person13.png" alt="Profile 14"></div>
+              <div class="sliderItem"><img src="assets/img/pics/person14.png" alt="Profile 15"></div>
+            </div>
+          </div>
+          <button id="arrowForward" class="arrow">
+            <img src="assets/img/icons/arrow_forward.png" alt="Arrow img">
+          </button>
+        </div>
+        <input id="username_Input_1" placeholder="Username" type="text">
+        <input id="password_Input_1" placeholder="Set password" type="password">
+        <input id="password_Input_2" placeholder="Confirm password" type="password">
+        <div class="sumbitArea">
+          <button class="cancel">back</button>
+          <button id="confirm_2" class="confirm">Sign up</button>
+        </div>
+        <span class="alert" id="alert_1"></span>
+      </div>
+    </div>
+    <div class="modal_3 hidden">
+      <div class="container">
+        <h1>Do you want to stay logged in?</h1>
+        <div class="dialog">
+          <button class="cancel">cancel</button>
+          <button id="confirm_3" class="confirm">confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main class="hidden">
+    <div class="sideBars">
+      <div class="mainSideBar">
+        <div class="block_0">
+          <button id="button_0">
+            <img src="assets/img/icons/dashboard.png" alt="Dashboard icon">
+            <h2>Dashboard</h2>
+          </button>
+          <button id="button_1">
+            <img src="assets/img/icons/settings.png" alt="Settings icon">
+            <h2>Settings</h2>
+          </button>
+        </div>
+        <div class="block_1"></div>
+        <div class="block_2">
+          <button id="toggleArrow">
+            <img src="assets/img/icons/left.png" alt="Arrow icon">
+          </button>
+          <button id="button_2_1">
+            <img src="assets/img/icons/logout.png" alt="Logout icon">
+            <h2>Logout</h2>
+          </button>
+        </div>
+      </div>
+    </div>
+    <section class="section_0 activeSection">
+      <nav>
+        <div id="searchArea_0">
+          <img src="assets/img/icons/search.png" alt="Search icon">
+          <input placeholder="Search" id="searchInput_0" type="text">
+        </div>
+        <div class="options">
+          <button id="createNewProject_Button"><img src="assets/img/icons/addBox.png" alt="Add icon"></button>
+          <button id="notifications_Button"><img src="assets/img/icons/notification.png" alt="Ring icon"></button>
+          <button id="account_Button">
+            <img class="account_ProfilePics" src="assets/img/pics/person0.png" alt="Profile picture">
+            <span class="account_Username">Username</span>
+          </button>
+        </div>
+      </nav>
+    </section>
+    <section class="section_1">
+      <h1>Settings</h1>
+    </section>
+  </main>
+  <div class="overlay hidden"></div>
+  <script src="src/js/datas.js"></script>
+  <script src="src/js/app.js"></script>
+  <script src="src/js/main.js"></script>
+</body>
+</html>
