@@ -26,8 +26,11 @@ const profilePics = profilePics_Cookie ? JSON.parse(profilePics_Cookie) : [];
 
 const logOut_Button = document.querySelector('#button_2_1');
 
-let accountIndex = JSON.parse(getCookie('accountIndex')) || -1;
-let runPanel = JSON.parse(getCookie('runPanel')) || null;
+let runPanel_Cookie = getCookie('runPanel');
+let accountIndex_Cookie = getCookie('accountIndex');
+
+let accountIndex = accountIndex_Cookie ? JSON.parse(accountIndex_Cookie) : -1;
+let runPanel = runPanel_Cookie ? JSON.parse(runPanel_Cookie) : null;
 let currentImageIndex = 0;
 let selectedImage = 0;
 
@@ -36,7 +39,6 @@ const resetModal = (number) => {
 
   modal.querySelectorAll('input').forEach((element) => {
     element.value = '';
-    element.classList.remove('highlight');
   });
   modal.querySelectorAll('.alert').forEach(element => {
     element.textContent = '';
@@ -114,17 +116,26 @@ const toggleMainSideBar = () => {
 const checkLogin = () => {
   const username_Input = document.querySelector('#username_Input_0');
   const password_Input = document.querySelector('#password_Input_0');
+  const alert = document.querySelector('#alert_0');
 
   accountIndex = usernames.indexOf(username_Input.value);
 
-  if (passwords[accountIndex] == password_Input.value) {
-    cookiesUpdate();
-    toggleModal(1);
-    setTimeout(() => {
-      toggleModal(3);
-    }, 500);
+  if (username_Input.value == '' || password_Input.value == '') {
+    alert.textContent = 'Fill in all inputs';
+  } else {
+    if (accountIndex != -1) {
+      if (passwords[accountIndex] == password_Input.value) {
+        cookiesUpdate();
+        toggleModal(1);
+        setTimeout(() => {
+          toggleModal(3);
+        }, 500);
+      } else {
+        alert.textContent = 'The password is incorrect';
+      }
     } else {
-    // ...
+      alert.textContent = 'Account not found';
+    }
   }
 }
 
@@ -153,20 +164,6 @@ const handleArrowClick = (direction) => {
   updateSlider();
 };
 
-const highlight = (element) => {
-  const input = element;
-  input.classList.add('highlight');
-}
-
-const clearHighlight = (elements) => {
-  const elementsArray = Array.from(elements);
-
-  elementsArray.forEach((element) => {
-    const input = element;
-    input.classList.remove('highlight');
-  });
-}
-
 const SignUp = () => {
   const username_Input = document.querySelector('#username_Input_1');
   const password_Input = document.querySelector('#password_Input_1');
@@ -179,32 +176,20 @@ const SignUp = () => {
 
   const elementsToHighlight = [username_Input, password_Input, password_Input_2];
 
-  clearHighlight(elementsToHighlight);
-
   if (username_Input.value == '' || password_Input.value == '' || password_Input_2.value == '') {
     alert.textContent = 'Fill in all inputs';
-    highlight(username_Input);
-    highlight(password_Input);
-    highlight(password_Input_2);
   } else if (usernames.includes(username_Input.value)) {
     alert.textContent = 'This username is already taken';
-    highlight(username_Input);
   } else if (password_Input.value.length > 16) {
     alert.textContent = 'Password is too long';
-    highlight(password_Input);
   } else if (password_Input.value.length < 8) {
     alert.textContent = 'Password is too short';
-    highlight(password_Input);
   } else if (!upperCaseRegex.test(password_Input.value)) {
     alert.textContent = 'Password must contain at least one uppercase letter';
-    highlight(password_Input);
   } else if (!numberRegex.test(password_Input.value)) {
     alert.textContent = 'Password must contain at least one number';
-    highlight(password_Input);
   } else if (password_Input_2.value != password_Input.value) {
     alert.textContent = 'Passwords are not the same';
-    highlight(password_Input);
-    highlight(password_Input_2);
   } else {
     alert.textContent = '';
     usernames.push(username_Input.value);
@@ -237,8 +222,8 @@ function getCookie(name) {
   return "";
 }
 
-const setCookie = (name, value) => {
-  document.cookie = name + "=" + value + ";expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/";
+const setCookie = (name, value, path = '/') => {
+  document.cookie = name + "=" + value + ";expires=Fri, 31 Dec 9999 23:59:59 GMT;path=" + path;
 }
 
 const deleteCookie = (name) => {
@@ -246,12 +231,14 @@ const deleteCookie = (name) => {
 };
 
 const cookiesUpdate = () => {
-  setCookie('usernames', JSON.stringify(usernames));
-  setCookie('passwords', JSON.stringify(passwords));
-  setCookie('profilePics', JSON.stringify(profilePics));
-  setCookie('accountIndex', accountIndex);
+  const path = '/';
+
+  setCookie('usernames', JSON.stringify(usernames), path);
+  setCookie('passwords', JSON.stringify(passwords), path);
+  setCookie('profilePics', JSON.stringify(profilePics), path);
+  setCookie('accountIndex', accountIndex, path);
  
-  setCookie('runPanel', runPanel);
+  setCookie('runPanel', runPanel, path);
 }
 
 const logIn = () => {

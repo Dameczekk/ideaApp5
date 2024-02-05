@@ -7,10 +7,8 @@ const main = () => {
         usernames[accountIndex],
         profilePics[accountIndex] + '.png'
       );
-      title.textContent = 'IDEA - loading';
       setTimeout(() => {
         startPanel();
-        title.textContent = 'IDEA - encrypting';
       }, 200);
     }, 1000);
   } else {
