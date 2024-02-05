@@ -321,7 +321,7 @@ nav {
 #account_Button {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 5px;
 }
 
