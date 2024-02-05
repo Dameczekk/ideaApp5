@@ -7,7 +7,7 @@ function handleResize() {
     startScreen.querySelector('img').setAttribute('src', 'assets/img/pics/ideaSmallLogo.png');
     startScreen.querySelector('img').classList.toggle('smallBrain');
   } else {
-    startScreen.querySelector('img').setAttribute('src', 'assets/img/pics/ideaApp5Logo.png');
+    startScreen.querySelector('img').setAttribute('src', 'assets/img/pics/ideaApp5PanelLogo.png');
   }
 }
 
