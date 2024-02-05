@@ -26,7 +26,7 @@ const profilePics = profilePics_Cookie ? JSON.parse(profilePics_Cookie) : [];
 
 const logOut_Button = document.querySelector('#button_2_1');
 
-let accountIndex = getCookie('accountIndex') || null;
+let accountIndex = JSON.parse(getCookie('accountIndex')) || -1;
 let runPanel = JSON.parse(getCookie('runPanel')) || null;
 let currentImageIndex = 0;
 let selectedImage = 0;
@@ -115,10 +115,10 @@ const checkLogin = () => {
   const username_Input = document.querySelector('#username_Input_0');
   const password_Input = document.querySelector('#password_Input_0');
 
+  accountIndex = usernames.indexOf(username_Input.value);
 
   if (passwords[accountIndex] == password_Input.value) {
-    accountIndex = usernames.indexOf(username_Input.value);
-    
+    cookiesUpdate();
     toggleModal(1);
     setTimeout(() => {
       toggleModal(3);
@@ -210,6 +210,11 @@ const SignUp = () => {
     usernames.push(username_Input.value);
     passwords.push(password_Input.value);
     profilePics.push(`assets/img/pics/person${selectedImage}`);
+
+    toggleModal(2);
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
 
     cookiesUpdate();
   }

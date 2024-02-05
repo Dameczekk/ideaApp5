@@ -1,4 +1,4 @@
-accountIndex = getCookie('accountIndex') || null;
+const title = document.querySelector('title');
 
 const main = () => {
   if (runPanel == true) {
@@ -7,13 +7,16 @@ const main = () => {
         usernames[accountIndex],
         profilePics[accountIndex] + '.png'
       );
+      title.textContent = 'IDEA - loading';
       setTimeout(() => {
         startPanel();
+        title.textContent = 'IDEA - encrypting';
       }, 200);
     }, 1000);
   } else {
     setTimeout(() => {
       toggleModal(1);
+      title.textContent = 'IDEA - login';
     }, 500);
   }
 }
@@ -31,6 +34,8 @@ const startPanel = () => {
     startScreen.classList.add('hidden');
     main.classList.remove('hidden');
   }, 500);
+
+  title.textContent = 'IDEA - panel';
 }
 
 const logOut = () => {
