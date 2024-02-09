@@ -30,6 +30,6 @@ This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LI
 
 ## Contributors
 
-- [Dykiel CEO] Enterprises - Initial development
+- [Damek CEO] Enterprises - Initial development
 
 Happy coding!
