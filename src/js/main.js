@@ -5,7 +5,8 @@ const main = () => {
     setTimeout(() => {
       loadAccountPanel(
         usernames[accountIndex],
-        profilePics[accountIndex] + '.png'
+        profilePics[accountIndex] + '.png',
+        notifications
       );
       setTimeout(() => {
         startPanel();

@@ -1,0 +1,86 @@
+.mainSideBar {
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  overflow: hidden;
+  width: 200px;
+  height: 100%;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  background-color: var(--leadingColor);
+  transition: width 0.5s ease;
+  animation: content 1s forwards;
+}
+
+.mainSideBar button {
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  width: 170px;
+  margin: 0 0 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: content 1s forwards;
+  transition: background 0.3s ease;
+}
+.mainSideBar button {
+  transition: 0.5s ease;
+}
+
+.mainSideBar button img {
+  width: 42px;
+  height: 42px;
+  padding: 5px;
+  margin: 0 20px 0 0;
+  border-radius: 5px;
+  background-color: var(--leadingColor2);
+  transition: background 0.3s ease;
+}
+.mainSideBar button img:hover {
+  background-color: var(--leadingColorHover);
+  transition: background 0.3s ease;
+}
+
+.mainSideBar button:hover { background-color: var(--leadingColorHover); }
+
+.mainSideBar button:hover img { border-radius: 0; }
+
+.mainSideBar button h2 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.mainSideBar button h2::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+  z-index: -1;
+}
+
+.mainSideBar button:hover h2::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  transition: transform 0.3s;
+}
+
+.expanded_sideBar { width: 80px; }
+.expanded_panel {
+  margin: 0 0 0 80px;
+  padding: 20px 100px 20px 20px;
+}

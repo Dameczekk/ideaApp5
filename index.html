@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="assets/img/pics/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="src/css/loaders.css">
   <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="components/desktop_sideBar/style.css">
   <link rel="stylesheet" href="src/css/animations.css">
   <link rel="stylesheet" href="mobile/responsive.css">
   <title>app</title>
@@ -22,7 +23,7 @@
     <div class="modal_0 hidden">
       <h1>Settings</h1>
       <div class="dialog">
-        <button class="cancel">cancel</button>
+        <button id="cancel_0" class="cancel">cancel</button>
         <button id="confirm_0" class="confirm">confirm</button>
       </div>
     </div>
@@ -73,7 +74,7 @@
         <input id="password_Input_1" placeholder="Set password" type="password">
         <input id="password_Input_2" placeholder="Confirm password" type="password">
         <div class="sumbitArea">
-          <button class="cancel">back</button>
+          <button id="cancel_1" class="cancel">back</button>
           <button id="confirm_2" class="confirm">Sign up</button>
         </div>
         <span class="alert" id="alert_1"></span>
@@ -83,35 +84,43 @@
       <div class="container">
         <h1>Do you want to stay logged in?</h1>
         <div class="dialog">
-          <button class="cancel">cancel</button>
+          <button id="cancel_2" class="cancel">cancel</button>
           <button id="confirm_3" class="confirm">confirm</button>
         </div>
+      </div>
+    </div>
+    <div class="modal_4 hidden">
+      <div class="container">
+
+      </div>
+      <div class="dialog">
+        <button id="cancel_3" class="cancel">cancel</button>
+        <button class="confirm">confirm</button>
+      </div>
+    </div>
+    <div class="modal_5 hidden">
+      <h1>Received</h1>
+      <div class="container">
+        <div id="notifications">
+          <template class="notificationPattern">
+            <div class="notification">
+              <h2 class="notification_Title">{Title}</h2>
+              <h3 class="notification_Relation">{sender} » {recipient}</h3>
+              <span class="notification_Text">{Text}</span>
+            </div>
+          </template>
+        </div>
+      </div>
+      <div class="dialog">
+        <button id="cancel_4" class="cancel">cancel</button>
+        <button class="confirm">confirm</button>
       </div>
     </div>
   </div>
   <main class="hidden">
     <div class="sideBars">
-      <div class="mainSideBar">
-        <div class="block_0">
-          <button id="button_0">
-            <img src="assets/img/icons/dashboard.png" alt="Dashboard icon">
-            <h2>Dashboard</h2>
-          </button>
-          <button id="button_1">
-            <img src="assets/img/icons/settings.png" alt="Settings icon">
-            <h2>Settings</h2>
-          </button>
-        </div>
-        <div class="block_1"></div>
-        <div class="block_2">
-          <button id="toggleArrow">
-            <img src="assets/img/icons/left.png" alt="Arrow icon">
-          </button>
-          <button id="button_2_1">
-            <img src="assets/img/icons/logout.png" alt="Logout icon">
-            <h2>Logout</h2>
-          </button>
-        </div>
+      <div class="mainSideBar2 hidden">
+        
       </div>
     </div>
     <section class="section_0 activeSection">
@@ -135,8 +144,10 @@
     </section>
   </main>
   <div class="overlay hidden"></div>
+  <script src="src/js/notifications.js"></script>
   <script src="src/js/datas.js"></script>
   <script src="src/js/app.js"></script>
+  <script src="components/desktop_sideBar/script.js"></script>
   <script src="src/js/main.js"></script>
   <script src="mobile/responsive.js"></script>
 </body>

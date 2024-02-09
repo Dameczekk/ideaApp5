@@ -22,11 +22,13 @@
   --zoom: zoom 0.5s forwards;
 }
 
-h1, h2 { font-weight: lighter; }
+h1, h2, h3 { font-weight: lighter; }
 
 h1 { font-size: 27px; }
 
 h2 { font-size: 20px; }
+
+h3 { font-size: 18px; }
 
 .overlay {
   z-index: 2;
@@ -91,7 +93,9 @@ h2 { font-size: 20px; }
 .modal_0,
 .modal_1,
 .modal_2,
-.modal_3 {
+.modal_3,
+.modal_4,
+.modal_5 {
   z-index: 3;
   position: fixed;
   top: 60%;
@@ -145,87 +149,6 @@ h2 { font-size: 20px; }
   top: 65%;
 }
 
-.mainSideBar {
-  z-index: 1;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  overflow: hidden;
-  width: 200px;
-  height: 100%;
-  padding: 20px;
-  box-shadow: var(--shadow);
-  background-color: var(--leadingColor);
-  transition: width 0.5s ease;
-  animation: content 1s forwards;
-}
-
-.mainSideBar button {
-  background-color: transparent;
-  border: 0;
-  display: flex;
-  align-items: center;
-  width: 170px;
-  margin: 0 0 5px 0;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  animation: content 1s forwards;
-  transition: background 0.3s ease;
-}
-.mainSideBar button {
-  transition: 0.5s ease;
-}
-
-.mainSideBar button img {
-  width: 42px;
-  height: 42px;
-  padding: 5px;
-  margin: 0 20px 0 0;
-  border-radius: 5px;
-  background-color: var(--leadingColor2);
-  transition: background 0.3s ease;
-}
-.mainSideBar button img:hover {
-  background-color: var(--leadingColorHover);
-  transition: background 0.3s ease;
-}
-
-.mainSideBar button:hover { background-color: var(--leadingColorHover); }
-
-.mainSideBar button:hover img { border-radius: 0; }
-
-.mainSideBar button h2 {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 14px;
-  position: relative;
-  z-index: 1;
-}
-
-.mainSideBar button h2::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #ffffff;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s;
-  z-index: -1;
-}
-
-.mainSideBar button:hover h2::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-  transition: transform 0.3s;
-}
-
 section {
   display: none;
   position: fixed;
@@ -234,11 +157,11 @@ section {
   margin: 0 0 0 200px;
   padding: 20px 220px 20px 20px;
   background-color: var(--theme);
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   transition: margin 0.5s ease, padding 0.5s ease;
   animation: global 0.5s forwards;
 }
-section::-webkit-scrollbar-track {
+/* section::-webkit-scrollbar-track {
   background-color: transparent;
 }
 section::-webkit-scrollbar {
@@ -248,13 +171,7 @@ section::-webkit-scrollbar {
 section::-webkit-scrollbar-thumb {
   background-color: var(--leadingColor);
   border-radius: 10px;
-}
-
-.expanded_sideBar { width: 80px; }
-.expanded_panel {
-  margin: 0 0 0 80px;
-  padding: 20px 100px 20px 20px;
-}
+} */
 
 nav {
   width: 100%;
@@ -488,3 +405,45 @@ input, select {
 
 .section_0 { animation: content 0.5s ease; }
 
+#notifications {
+  display: flex;
+  flex-direction: column;
+  height: 375px;
+  overflow-y: scroll;
+}
+#notifications::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#notifications::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+#notifications::-webkit-scrollbar-thumb {
+  background-color: var(--leadingColor);
+  border-radius: 10px;
+}
+
+.notification {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
+.notification h2 { font-size: 23px; }
+
+.notification h3 { font-size: 20px; }
+
+.notification:last-child {
+  margin-bottom: 0;
+}
+
+.notification:only-child { padding: 10px 0 0 0; }
+
+.mainSideBar2 {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: var(--leadingColor);
+}
